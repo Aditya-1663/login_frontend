@@ -1,70 +1,136 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# User Management System
 
-## Available Scripts
+This is a user management system that allows users to create an account, log in, and edit their profile. The backend is built with Node.js and MongoDB, while the frontend is built with React and styled to be responsive.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Features](#features)
+- [Installation](#installation)
+- [Backend Setup](#backend-setup)
+- [Frontend Setup](#frontend-setup)
+- [API Endpoints](#api-endpoints)
+- [Usage](#usage)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- User registration
+- User login
+- Edit user profile
+- JWT-based authentication
+- Responsive design
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js
+- MongoDB
+- npm or yarn
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+    ```bash
+    git clone https://github.com/Aditya-1663/login_backend.git
+   cd your-repo-name
+    ```
+      OR use hosted backend:
+      https://login-backend-zjog.onrender.com
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Install dependencies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```bash
+    npm install
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Start the backend server:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    ```bash
+    node ./index.js
+    ```
 
-### Code Splitting
+### Frontend Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+1. Clone the repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    ```bash
+    git clone https://github.com/Aditya-1663/login_frontend.git
+    cd your-repo-name
+    ```
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. Install dependencies:
 
-### Advanced Configuration
+    ```bash
+    npm install
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. Start the frontend development server:
 
-### Deployment
+    ```bash
+    npm start
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## API Endpoints
 
-### `npm run build` fails to minify
+### Authentication
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **POST** `/api/auth/createuser`
+  - Creates a new user.
+  - Request body:
+    ```json
+    {
+      "name": "username",
+      "email": "useremail@gmail.com",
+      "password": "yourpassword",
+      "mobilenumber": "1234567890",
+      "gender": "male",
+      "country": "Country",
+      "state": "State",
+      "city": "City",
+      "pincode": "123456",
+      "address": "123 Street Name"
+    }
+    ```
+
+- **POST** `/api/auth/login`
+  - Authenticates a user and returns a JWT token.
+  - Request body:
+    ```json
+    {
+      "email": "johndoe@example.com",
+      "password": "yourpassword"
+    }
+    ```
+
+- **POST** `/api/auth/updateprofile`
+  - Updates the user's profile.
+  - Requires authentication token in headers.
+  - Request body:
+    ```json
+    {
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "mobilenumber": "1234567890",
+      "gender": "male",
+      "country": "Country",
+      "state": "State",
+      "city": "City",
+      "pincode": "123456",
+      "address": "123 Street Name"
+    }
+    ```
+
+## Usage
+
+1. Open your browser and navigate to `http://localhost:3000`.
+2. Register a new user by clicking on the "Sign Up" link.
+3. Log in with the registered user credentials.
+4. Edit the user profile by navigating to the "Profile" section.
