@@ -1,0 +1,28 @@
+.container{
+    /* border: red solid 2px ; */
+    max-width: 800px;
+    min-width: 500px;
+}
+label{
+    width: auto !important;
+}
+input{
+    width: 100% !important;
+    margin-left: 10px !important ;
+}
+.custom-radio { border: none;
+  background-color: aquamarine;
+  border: red 2000px solid !important;
+}
+#male{
+    width: 200px;
+}
+.radiobnt{
+ 
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
