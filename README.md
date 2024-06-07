@@ -64,6 +64,8 @@ This is a user management system that allows users to create an account, log in,
     git clone https://github.com/Aditya-1663/login_frontend.git
     cd your-repo-name
     ```
+      OR use hosted Frontend:
+      https://login-frontend-h7qn.onrender.com
 
 
 2. Install dependencies:
@@ -105,7 +107,7 @@ This is a user management system that allows users to create an account, log in,
   - Request body:
     ```json
     {
-      "email": "johndoe@example.com",
+      "email": "useremail@gmail.com",
       "password": "yourpassword"
     }
     ```
@@ -116,8 +118,8 @@ This is a user management system that allows users to create an account, log in,
   - Request body:
     ```json
     {
-      "name": "John Doe",
-      "email": "johndoe@example.com",
+      "name": "username",
+      "email": "useremail@gmail.com",
       "mobilenumber": "1234567890",
       "gender": "male",
       "country": "Country",
